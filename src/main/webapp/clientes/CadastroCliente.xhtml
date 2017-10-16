@@ -41,6 +41,38 @@
 				<p:outputLabel value="E-mail" for="email" />
 				<p:inputText id="email" size="40" maxlength="60" />
 			</p:panelGrid>
+			
+			<p:commandButton value="Adicionar endereço" style="margin-top: 20px"/>
+			
+			<p:dataTable id="cadstroTabela" value="" style="margin-top: 20px" emptyMessage="Nenhum pedido encontrado." rows="20" paginator="true"
+			paginatorAlwaysVisible="false" paginatorPosition="bottom">
+			
+				<p:column headerText="Logradouro">
+					<h:outputText value="Rua Sto Adalberto"/>
+				</p:column>
+				
+				<p:column headerText="Número">
+					<h:outputText value="25"/>
+				</p:column>
+				
+				<p:column headerText="Complemento">
+					<h:outputText value="Residencial Granada"/>
+				</p:column>
+				
+				<p:column headerText="CEP">
+					<h:outputText value="65054-115"/>
+				</p:column>
+				
+				<p:column headerText="Cidade/UF">
+					<h:outputText value="São Luis/MA"/>
+				</p:column>
+				
+				<p:column  style="text-align: center; width: 70px">
+					<p:button icon="ui-icon-pencil"/>
+					<p:commandButton icon="ui-icon-trash"/>
+				</p:column>
+				
+			</p:dataTable>
 
 		</h:form>
 	</ui:define>

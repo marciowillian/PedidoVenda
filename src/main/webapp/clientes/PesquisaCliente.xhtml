@@ -1,0 +1,40 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:define name="titulo">Pesquisa Cliente</ui:define>
+
+	<ui:define name="corpo">
+		<h:form>
+			<h1>Pesquisa cliente</h1>
+
+			<ui:include src="/WEB-INF/template/clientes/BotoesCliente.xhtml"/>
+			<ui:include src="/WEB-INF/template/clientes/CapaCliente.xhtml"/>
+			
+			<p:dataTable id="clienteTable" value="#{pesquisaClientesBean.clientesFiltrados}" var="cliente"
+			style="margin-top: 20px" emptyMessage="Nenhum pedido encontrado." rows="20" paginator="true"
+			paginatorAlwaysVisible="false" paginatorPosition="bottom">
+				<p:column headerText="Nome">
+					<h:outputText value="João"/>
+				</p:column>
+				
+				<p:column headerText="Tipo">
+					<h:outputText value="Júridica"/>
+				</p:column>
+				
+				<p:column headerText="CPF/CNPJ">
+					<h:outputText value="051.256.123.60"/>
+				</p:column>
+				
+				<p:column style="text-align: center; width: 70px">
+					<p:button icon="ui-icon-pencil" title="Editar"/>
+					<p:commandButton icon="ui-icon-trash" title="Excluir"/>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
