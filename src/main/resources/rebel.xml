@@ -13,6 +13,11 @@
 
 	<web>
 		<link target="/">
+			<dir name="/home/marcio/desenvolvimento-Pedido_venda/workspace/PedidoVenda/target/m2e-wtp/web-resources">
+				<exclude name="/"/>
+			</dir>
+		</link>
+		<link target="/">
 			<dir name="/home/marcio/desenvolvimento-Pedido_venda/workspace/PedidoVenda/src/main/webapp">
 			</dir>
 		</link>

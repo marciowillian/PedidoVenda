@@ -1,80 +1,127 @@
 <ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
 
-	<ui:define name="titulo">Novo Cliente</ui:define>
+    <ui:define name="titulo">Novo Cliente</ui:define>
 
-	<ui:define name="corpo">
-		<h:form>
-			<h1>Novo cliente</h1>
+    <ui:define name="corpo">
+        <h:form>
+            <h1>Novo cliente</h1>
 
-			<p:toolbar style="margin-top: 20px">
-				<p:toolbarGroup>
-					<p:button value="Novo" outcome="/clientes/CadastroCliente" />
-					<p:button value="Ir para tela de cadastro de Usuario"
-						outcome="/usuarios/CadastroUsuario" />
-					<p:commandButton value="Salvar" id="botaoSalvar" />
-				</p:toolbarGroup>
+            <p:toolbar style="margin-top: 20px">
+                <p:toolbarGroup>
+                    <p:button value="Novo" outcome="/clientes/CadastroCliente"/>
+                    <p:button value="Ir para tela de cadastro de Usuario"
+                              outcome="/usuarios/CadastroUsuario"/>
+                    <p:commandButton value="Salvar" id="botaoSalvar"/>
+                </p:toolbarGroup>
 
-				<p:toolbarGroup align="right">
-					<p:button value="Pesquisa" outcome="/produtos/PesquisaProduto"/>
-				</p:toolbarGroup>
-			</p:toolbar>
+                <p:toolbarGroup align="right">
+                    <p:button value="Pesquisa" outcome="/produtos/PesquisaProduto"/>
+                </p:toolbarGroup>
+            </p:toolbar>
 
-			<p:panelGrid columns="2" id="painel"
-				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
-				<p:outputLabel value="Nome" for="nome" />
-				<p:inputText id="nome" size="60" maxlength="80" />
+            <p:panelGrid columns="2" id="painel"
+                         style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+                <p:outputLabel value="Nome" for="nome"/>
+                <p:inputText id="nome" size="60" maxlength="80"/>
 
-				<p:outputLabel value="Tipo" for="tipo" />
-				<p:selectOneRadio id="tipo">
-					<f:selectItem itemLabel="Física" itemValue="1" />
-					<f:selectItem itemLabel="Jurídica" itemValue="2" />
-				</p:selectOneRadio>
+                <p:outputLabel value="Tipo" for="tipo"/>
+                <p:selectOneRadio id="tipo">
+                    <f:selectItem itemLabel="Física" itemValue="1"/>
+                    <f:selectItem itemLabel="Jurídica" itemValue="2"/>
+                </p:selectOneRadio>
 
-				<p:outputLabel value="CNPJ" for="cnpj" />
-				<p:inputMask id="cnpj" mask="99.999.999/9999-99" maxlength="14" />
+                <p:outputLabel value="CNPJ" for="cnpj"/>
+                <p:inputMask id="cnpj" mask="99.999.999/9999-99" maxlength="14"/>
 
-				<p:outputLabel value="E-mail" for="email" />
-				<p:inputText id="email" size="40" maxlength="60" />
-			</p:panelGrid>
-			
-			<p:commandButton value="Adicionar endereço" style="margin-top: 20px"/>
-			
-			<p:dataTable id="cadstroTabela" value="" style="margin-top: 20px" emptyMessage="Nenhum pedido encontrado." rows="20" paginator="true"
-			paginatorAlwaysVisible="false" paginatorPosition="bottom">
-			
-				<p:column headerText="Logradouro">
-					<h:outputText value="Rua Sto Adalberto"/>
-				</p:column>
-				
-				<p:column headerText="Número">
-					<h:outputText value="25"/>
-				</p:column>
-				
-				<p:column headerText="Complemento">
-					<h:outputText value="Residencial Granada"/>
-				</p:column>
-				
-				<p:column headerText="CEP">
-					<h:outputText value="65054-115"/>
-				</p:column>
-				
-				<p:column headerText="Cidade/UF">
-					<h:outputText value="São Luis/MA"/>
-				</p:column>
-				
-				<p:column  style="text-align: center; width: 70px">
-					<p:button icon="ui-icon-pencil"/>
-					<p:commandButton icon="ui-icon-trash"/>
-				</p:column>
-				
-			</p:dataTable>
+                <p:outputLabel value="E-mail" for="email"/>
+                <p:inputText id="email" size="40" maxlength="60"/>
+            </p:panelGrid>
 
-		</h:form>
-	</ui:define>
+            <p:commandButton value="Adicionar endereço" style="margin-top: 20px" onclick="PF('dlgIncEnd').show();"/>
+
+            <p:dataTable id="cadstroTabela" value="" style="margin-top: 20px" emptyMessage="Nenhum pedido encontrado."
+                         rows="20" paginator="true"
+                         paginatorAlwaysVisible="false" paginatorPosition="bottom">
+
+                <p:column headerText="Logradouro">
+                    <h:outputText value="Rua Sto Adalberto"/>
+                </p:column>
+
+                <p:column headerText="Número">
+                    <h:outputText value="25"/>
+                </p:column>
+
+                <p:column headerText="Complemento">
+                    <h:outputText value="Residencial Granada"/>
+                </p:column>
+
+                <p:column headerText="CEP">
+                    <h:outputText value="65054-115"/>
+                </p:column>
+
+                <p:column headerText="Cidade/UF">
+                    <h:outputText value="São Luis/MA"/>
+                </p:column>
+
+                <p:column style="text-align: center; width: 70px">
+                    <p:button icon="ui-icon-pencil"/>
+                    <p:commandButton icon="ui-icon-trash" onclick="PF('confirmacaoExclusao').show();"/>
+                </p:column>
+
+            </p:dataTable>
+
+
+            <p:dialog header="Inclusão de endereço" widgetVar="dlgIncEnd" modal="true" showEffect="explode"
+                      hideEffect="bounce" height="200">
+
+                <h:panelGrid columns="4">
+
+                    <p:outputLabel for="logradouro" value="Logradouro"/>
+                    <p:inputText id="logradouro" style="width: 300px"/>
+
+                    <p:outputLabel/><p:outputLabel/>
+
+                    <p:outputLabel for="numero" value="Numero"/>
+                    <p:inputText id="numero" style="width: 90px"/>
+
+                    <p:outputLabel/><p:outputLabel/>
+
+                    <p:outputLabel for="complemento" value="Complemento"/>
+                    <p:inputText id="complemento" style="width: 200px"/>
+
+                    <p:outputLabel/><p:outputLabel/>
+
+                    <p:outputLabel for="cep" value="CEP"/>
+                    <p:inputText id="cep" style="width: 120px"/>
+
+                    <p:outputLabel/><p:outputLabel/>
+
+                    <p:outputLabel for="cidade" value="Cidade"/>
+                    <p:inputText id="cidade" style="width: 200px"/>
+
+                    <p:outputLabel for="uf" value="UF" style="border-left: 20"/>
+                    <p:inputText id="uf" style="width: 40px; letter-spacing: 10px"/>
+
+                    <p:outputLabel/>
+
+                    <p:commandButton value="Incluir" onclick="PF('dlgIncEnd').find();"/>
+
+                </h:panelGrid>
+
+            </p:dialog>
+
+            <p:confirmDialog header="Exclusão de cliente" message="Tem certeza que deseja excluir o cliente?" widgetVar="confirmacaoExclusao">
+                <p:button value="Não" onclick="PF('confirmacaoExclusao').hide(); return false"/>
+                <p:commandButton value="Sim" oncomplete="PF('confirmacaoExclusao').hide()"/>
+            </p:confirmDialog>
+
+
+        </h:form>
+    </ui:define>
 
 </ui:composition>

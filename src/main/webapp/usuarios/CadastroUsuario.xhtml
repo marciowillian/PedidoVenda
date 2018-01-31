@@ -17,7 +17,7 @@
             </p:toolbarGroup>
 
             <p:toolbarGroup align="right">
-                <p:button value="Pesquisa"/>
+                <p:button value="Pesquisa" outcome="/clientes/PesquisaUsuario"/>
             </p:toolbarGroup>
         </p:toolbar>
 
@@ -48,10 +48,16 @@
         		</p:column>
         		
         		<p:column  style="text-align: center; width: 30px">
-        			<p:commandButton icon="ui-icon-close"/>
+        			<p:commandButton icon="ui-icon-close" onclick="PF('confirmacaoExclusao').show();"/>
         		</p:column>
         	</p:dataTable>
-        	
+
+        <p:confirmDialog header="Exclusão de grupo" message="Tem certeza que deseja excluir o grupo?" widgetVar="confirmacaoExclusao">
+            <p:button value="Não" onclick="PF('confirmacaoExclusao').hide(); return false"/>
+            <p:commandButton value="Sim" oncomplete="PF('confirmacaoExclusao').hide()"/>
+        </p:confirmDialog>
     </ui:define>
+
+
 
 </ui:composition>
