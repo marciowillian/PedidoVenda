@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
-@ManagedBean
+import javax.inject.Named;
+
+@Named
 @RequestScoped
 public class PesquisaProdutosBean{
 	
@@ -18,9 +20,9 @@ public class PesquisaProdutosBean{
 		for(int i = 0; i < 50; i++) {
 			produtosFiltrados.add(i);
 		}
-		
-		//System.out.println(produtosFiltrados);
 	}
+
+
 
 	public List<Integer> getProdutosFiltrados() {
 		return produtosFiltrados;

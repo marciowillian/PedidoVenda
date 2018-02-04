@@ -1,5 +1,7 @@
 package com.mwcc.pedidovenda.controller;
 
+import com.mwcc.pedidovenda.service.NegocioException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +18,10 @@ public class CadastroPedidosBean {
 		itens = new ArrayList<Integer>();
 		itens.add(1);
 		
+	}
+
+	public void salvar(){
+		throw new NegocioException("Pedido não pode ser salvo, pois ainda não foi implementado.");
 	}
 
 	public List<Integer> getItens() {
