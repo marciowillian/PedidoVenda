@@ -1,35 +1,25 @@
 package com.mwcc.pedidovenda.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
-@Table(name = "endereco")
-public class Endereco implements Serializable{
+@Embeddable
+public class EnderecoEntrega implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
     private String logradouro;
     private String numero;
     private String complemento;
     private String cidade;
     private String uf;
     private String cep;
-    private Cliente cliente;
 
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Column(nullable = false, length = 150)
+    @Column(name = "entrega_logradouro", nullable = false, length = 150)
     public String getLogradouro() {
         return logradouro;
     }
@@ -38,7 +28,7 @@ public class Endereco implements Serializable{
         this.logradouro = logradouro;
     }
 
-    @Column(nullable = false, length = 20)
+    @Column(name = "entrega_numero", nullable = false, length = 20)
     public String getNumero() {
         return numero;
     }
@@ -47,7 +37,7 @@ public class Endereco implements Serializable{
         this.numero = numero;
     }
 
-    @Column(length = 150)
+    @Column(name = "entrega_complemento", length = 150)
     public String getComplemento() {
         return complemento;
     }
@@ -56,7 +46,7 @@ public class Endereco implements Serializable{
         this.complemento = complemento;
     }
 
-    @Column(nullable = false, length = 60)
+    @Column(name = "entrega_cidade", nullable = false, length = 60)
     public String getCidade() {
         return cidade;
     }
@@ -65,7 +55,7 @@ public class Endereco implements Serializable{
         this.cidade = cidade;
     }
 
-    @Column(nullable = false, length = 60)
+    @Column(name = "entrega_uf", nullable = false, length = 60)
     public String getUf() {
         return uf;
     }
@@ -74,36 +64,12 @@ public class Endereco implements Serializable{
         this.uf = uf;
     }
 
-    @Column(nullable = false, length = 9)
+    @Column(name = "entrega_cep", nullable = false, length = 60)
     public String getCep() {
         return cep;
     }
 
     public void setCep(String cep) {
         this.cep = cep;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false)
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Endereco)) return false;
-        Endereco endereco = (Endereco) o;
-        return Objects.equals(getId(), endereco.getId());
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(getId());
     }
 }

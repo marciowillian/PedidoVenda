@@ -1,8 +1,13 @@
 package com.mwcc.pedidovenda.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "usuario")
 public class Usuario implements Serializable{
     private static final long serialVersionUID = 1L;
 
@@ -10,8 +15,10 @@ public class Usuario implements Serializable{
     private String nome;
     private String email;
     private String senha;
-    private Grupo grupo;
+    private List<Grupo> grupo = new ArrayList<>();
 
+    @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -20,6 +27,7 @@ public class Usuario implements Serializable{
         this.id = id;
     }
 
+    @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
     }
@@ -28,6 +36,7 @@ public class Usuario implements Serializable{
         this.nome = nome;
     }
 
+    @Column(nullable = false, length = 255, unique = true)
     public String getEmail() {
         return email;
     }
@@ -36,6 +45,7 @@ public class Usuario implements Serializable{
         this.email = email;
     }
 
+    @Column(nullable = true, length = 30)
     public String getSenha() {
         return senha;
     }
@@ -44,13 +54,20 @@ public class Usuario implements Serializable{
         this.senha = senha;
     }
 
-    public Grupo getGrupo() {
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "usuario_grupo",joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "grupo_id"))
+    public List<Grupo> getGrupo() {
         return grupo;
     }
 
-    public void setGrupo(Grupo grupo) {
+    public void setGrupo(List<Grupo> grupo) {
         this.grupo = grupo;
     }
+
+   // @ManyToMany(cascade = CascadeType.ALL)
+   //@JoinTable(name = "usuario_grupo",joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "grupo_id"))
+
+
 
     @Override
     public boolean equals(Object o) {

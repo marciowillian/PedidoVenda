@@ -1,0 +1,56 @@
+2018-02-04 15:14:06,416 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2018-02-04 15:14:06,428 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2018-02-04 15:14:06,431 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2018-02-04 15:14:06,434 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2018-02-04 15:14:06,751 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-02-04 15:14:06,759 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2018-02-04 15:14:06,759 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2018-02-04 15:14:06,760 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/PedidoVenda]
+2018-02-04 15:14:06,760 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2018-02-04 15:14:07,171 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-02-04 15:14:07,478 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2018-02-04 15:14:07,485 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2018-02-04 15:14:07,733 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000227: Running hbm2ddl schema export
+2018-02-04 15:14:07,796 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000230: Schema export complete
+2018-02-04 15:15:10,970 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2018-02-04 15:15:10,979 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2018-02-04 15:15:10,982 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2018-02-04 15:15:10,985 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2018-02-04 15:15:11,292 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-02-04 15:15:11,298 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2018-02-04 15:15:11,298 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2018-02-04 15:15:11,298 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/PedidoVenda]
+2018-02-04 15:15:11,298 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2018-02-04 15:15:11,735 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-02-04 15:15:11,953 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2018-02-04 15:15:11,960 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2018-02-04 15:15:12,238 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000227: Running hbm2ddl schema export
+2018-02-04 15:15:12,301 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000230: Schema export complete
+2018-02-04 15:29:06,686 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2018-02-04 15:29:06,696 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2018-02-04 15:29:06,699 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2018-02-04 15:29:06,701 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2018-02-04 15:29:07,024 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-02-04 15:29:07,032 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2018-02-04 15:29:07,032 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2018-02-04 15:29:07,033 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/PedidoVenda]
+2018-02-04 15:29:07,033 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2018-02-04 15:29:07,490 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-02-04 15:29:07,705 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2018-02-04 15:29:07,711 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2018-02-04 15:29:07,960 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000227: Running hbm2ddl schema export
+2018-02-04 15:29:08,007 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000230: Schema export complete
+2018-02-04 15:30:14,328 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2018-02-04 15:30:14,340 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2018-02-04 15:30:14,343 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2018-02-04 15:30:14,348 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2018-02-04 15:30:14,625 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-02-04 15:30:14,632 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2018-02-04 15:30:14,632 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2018-02-04 15:30:14,632 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/PedidoVenda]
+2018-02-04 15:30:14,632 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2018-02-04 15:30:15,013 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-02-04 15:30:15,261 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2018-02-04 15:30:15,269 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2018-02-04 15:30:15,544 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000227: Running hbm2ddl schema export
+2018-02-04 15:30:15,607 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] HHH000230: Schema export complete

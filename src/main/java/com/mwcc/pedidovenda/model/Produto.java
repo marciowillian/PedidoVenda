@@ -1,8 +1,12 @@
 package com.mwcc.pedidovenda.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Objects;
 
+@Entity
+@Table(name = "produto")
 public class Produto implements Serializable{
 
     private static final long serialVersionUID = 1L;
@@ -10,10 +14,11 @@ public class Produto implements Serializable{
     private Long id;
     private String nome;
     private String sku;
-    private float valorUnitario;
-    private int quantidadeEstoque;
+    private BigDecimal valorUnitario;
+    private Integer quantidadeEstoque;
     private Categoria categoria;
 
+    @Id @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -22,6 +27,7 @@ public class Produto implements Serializable{
         this.id = id;
     }
 
+    @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
     }
@@ -30,6 +36,7 @@ public class Produto implements Serializable{
         this.nome = nome;
     }
 
+    @Column(nullable = false, length = 20, unique = true)
     public String getSku() {
         return sku;
     }
@@ -38,22 +45,26 @@ public class Produto implements Serializable{
         this.sku = sku;
     }
 
-    public float getValorUnitario() {
+    @Column(name = "valor_unitario", nullable = false, precision = 10, scale = 2)
+    public BigDecimal getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(float valorUnitario) {
+    public void setValorUnitario(BigDecimal valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 
-    public int getQuantidadeEstoque() {
+    @Column(name = "quantidade_estoque", length = 5, nullable = false, precision = 10, scale = 2)
+    public Integer getQuantidadeEstoque() {
         return quantidadeEstoque;
     }
 
-    public void setQuantidadeEstoque(int quantidadeEstoque) {
+    public void setQuantidadeEstoque(Integer quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id", nullable = false)
     public Categoria getCategoria() {
         return categoria;
     }

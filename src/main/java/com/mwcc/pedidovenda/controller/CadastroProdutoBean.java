@@ -8,7 +8,7 @@ import javax.inject.Named;
 public class CadastroProdutoBean {
 
     public void salvar(){
-        throw new RuntimeException("Teste de exceção");
+        throw new RuntimeException("TesteCliente de exceção");
     }
 
 }

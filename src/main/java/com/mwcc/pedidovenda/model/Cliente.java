@@ -1,10 +1,13 @@
 package com.mwcc.pedidovenda.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "cliente")
 public class Cliente implements Serializable{
 
     private static final long serialVersionUID = 1L;
@@ -16,6 +19,8 @@ public class Cliente implements Serializable{
     private String documentoReceitaFederal;
     private List<Endereco> enderecos = new ArrayList<>();
 
+    @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -24,6 +29,7 @@ public class Cliente implements Serializable{
         this.id = id;
     }
 
+    @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
     }
@@ -32,6 +38,7 @@ public class Cliente implements Serializable{
         this.nome = nome;
     }
 
+    @Column(nullable = false, length = 255)
     public String getEmail() {
         return email;
     }
@@ -40,6 +47,8 @@ public class Cliente implements Serializable{
         this.email = email;
     }
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 10)
     public TipoPessoa getTipo() {
         return tipo;
     }
@@ -48,6 +57,7 @@ public class Cliente implements Serializable{
         this.tipo = tipo;
     }
 
+    @Column(name = "doc_receita_federal", nullable = false, length = 14)
     public String getDocumentoReceitaFederal() {
         return documentoReceitaFederal;
     }
@@ -56,6 +66,7 @@ public class Cliente implements Serializable{
         this.documentoReceitaFederal = documentoReceitaFederal;
     }
 
+    @OneToMany(mappedBy = "cliente",cascade = CascadeType.ALL)
     public List<Endereco> getEnderecos() {
         return enderecos;
     }

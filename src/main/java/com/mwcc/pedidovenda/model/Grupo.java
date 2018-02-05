@@ -1,8 +1,11 @@
 package com.mwcc.pedidovenda.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "grupo")
 public class Grupo implements Serializable{
 
     private static final long serialVersionUID = 1L;
@@ -11,6 +14,8 @@ public class Grupo implements Serializable{
     private String nome;
     private String descricao;
 
+    @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -19,6 +24,7 @@ public class Grupo implements Serializable{
         this.id = id;
     }
 
+    @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
     }
@@ -27,6 +33,7 @@ public class Grupo implements Serializable{
         this.nome = nome;
     }
 
+    @Column(length = 150)
     public String getDescricao() {
         return descricao;
     }
