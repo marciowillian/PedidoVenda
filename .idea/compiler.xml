@@ -9,7 +9,7 @@
         <module name="PedidoVenda" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="PedidoVenda" target="1.7" />
     </bytecodeTargetLevel>
   </component>

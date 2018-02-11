@@ -1,6 +1,8 @@
 package com.mwcc.pedidovenda.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class Grupo implements Serializable{
         this.id = id;
     }
 
+    @NotBlank @Size(max = 100)
     @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
@@ -33,6 +36,7 @@ public class Grupo implements Serializable{
         this.nome = nome;
     }
 
+    @NotBlank @Size(max = 150)
     @Column(length = 150)
     public String getDescricao() {
         return descricao;

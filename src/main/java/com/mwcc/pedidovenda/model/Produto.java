@@ -1,6 +1,9 @@
 package com.mwcc.pedidovenda.model;
 
+import com.mwcc.pedidovenda.validation.SKU;
+
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -27,6 +30,7 @@ public class Produto implements Serializable{
         this.id = id;
     }
 
+    @NotBlank @Size(max = 80)
     @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
@@ -36,6 +40,7 @@ public class Produto implements Serializable{
         this.nome = nome;
     }
 
+    @NotBlank @SKU
     @Column(nullable = false, length = 20, unique = true)
     public String getSku() {
         return sku;
@@ -45,6 +50,7 @@ public class Produto implements Serializable{
         this.sku = sku;
     }
 
+    @NotNull(message = "é obrigatório")
     @Column(name = "valor_unitario", nullable = false, precision = 10, scale = 2)
     public BigDecimal getValorUnitario() {
         return valorUnitario;
@@ -54,7 +60,8 @@ public class Produto implements Serializable{
         this.valorUnitario = valorUnitario;
     }
 
-    @Column(name = "quantidade_estoque", length = 5, nullable = false, precision = 10, scale = 2)
+    @NotNull @Min(0) @Max(value = 9999, message = "tem um valor muito alto")
+    @Column(name = "quantidade_estoque", length = 5, nullable = false)
     public Integer getQuantidadeEstoque() {
         return quantidadeEstoque;
     }
@@ -63,6 +70,7 @@ public class Produto implements Serializable{
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
     public Categoria getCategoria() {

@@ -1,6 +1,9 @@
 package com.mwcc.pedidovenda.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,7 @@ public class Usuario implements Serializable{
         this.id = id;
     }
 
+    @NotBlank @Size(max = 100)
     @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
@@ -36,6 +40,7 @@ public class Usuario implements Serializable{
         this.nome = nome;
     }
 
+    @NotBlank @Size(max = 255)
     @Column(nullable = false, length = 255, unique = true)
     public String getEmail() {
         return email;
@@ -45,6 +50,7 @@ public class Usuario implements Serializable{
         this.email = email;
     }
 
+    @NotBlank @Size(max = 30)
     @Column(nullable = true, length = 30)
     public String getSenha() {
         return senha;
@@ -54,6 +60,7 @@ public class Usuario implements Serializable{
         this.senha = senha;
     }
 
+    @NotNull
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "usuario_grupo",joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "grupo_id"))
     public List<Grupo> getGrupo() {

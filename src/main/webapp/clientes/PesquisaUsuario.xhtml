@@ -17,15 +17,15 @@
 			<p:dataTable id="usuarioTable" value="#{pesquisaUsuarioBean.usuariosFiltrados}" var="usuario"
 			style="margin-top: 20px" emptyMessage="Nenhum usuario encontrado." rows="20" paginator="true"
 			paginatorAlwaysVisible="false" paginatorPosition="bottom">
-				<p:column headerText="Nome">
+				<p:column headerText="Nome" filterBy="#{pesquisaUsuarioBean.usuariosFiltrados}" sortBy="#{pesquisaUsuarioBean.usuariosFiltrados}">
 					<h:outputText value="João das Couves Junior"/>
 				</p:column>
 				
-				<p:column headerText="Tipo">
+				<p:column headerText="Tipo" filterBy="#{pesquisaUsuarioBean.usuariosFiltrados}" sortBy="#{pesquisaUsuarioBean.usuariosFiltrados}">
 					<h:outputText value="Júridica"/>
 				</p:column>
 				
-				<p:column headerText="E-mail">
+				<p:column headerText="E-mail" filterBy="#{pesquisaUsuarioBean.usuariosFiltrados}" sortBy="#{pesquisaUsuarioBean.usuariosFiltrados}">
 					<h:outputText value="email@gmail.com"/>
 				</p:column>
 				

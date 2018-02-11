@@ -1,6 +1,9 @@
 package com.mwcc.pedidovenda.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,9 @@ public class Cliente implements Serializable{
         this.id = id;
     }
 
+    @NotBlank
+    @NotNull
+    @Size(max = 100)
     @Column(nullable = false, length = 100)
     public String getNome() {
         return nome;
@@ -38,6 +44,9 @@ public class Cliente implements Serializable{
         this.nome = nome;
     }
 
+    @NotBlank
+    @NotNull
+    @Size(max = 255)
     @Column(nullable = false, length = 255)
     public String getEmail() {
         return email;
@@ -47,6 +56,9 @@ public class Cliente implements Serializable{
         this.email = email;
     }
 
+
+    @NotBlank
+    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
     public TipoPessoa getTipo() {
@@ -57,6 +69,9 @@ public class Cliente implements Serializable{
         this.tipo = tipo;
     }
 
+    @NotBlank
+    @NotNull
+    @Size(max = 14)
     @Column(name = "doc_receita_federal", nullable = false, length = 14)
     public String getDocumentoReceitaFederal() {
         return documentoReceitaFederal;
